@@ -30,7 +30,6 @@
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama Pelanggan</th>
                             <th scope="col">Nama Motor</th>
                             <th scope="col">Kategori Merk</th>
                             <th scope="col">Tanggal Beli</th>
@@ -43,7 +42,6 @@
                     <?php foreach($tampil as $sm): ?>
                       <tr>
                           <td scope="row"><?= $no ?></td>
-                          <td><?= $sm['nama_pelanggan'] ?></td>
                           <td><?= $sm['nama_motor'] ?></td>
                           <td><?= $sm['kategori_merk'] ?></td>
                           <td><?= $sm['tgl_beli'] ?></td>
@@ -88,7 +86,7 @@
           </div>
           <div class="form-group">
             <label for="file">Pilih File Excel (.xls, .xlsx, .CSV)</label>
-            <input type="file" class="form-control-file" id="file" name="file_excel" accept=".xls,.xlsx" required>
+            <input type="file" class="form-control-file" id="file" name="file_excel" accept=".xls,.xlsx.,csv" required>
           </div>
         </div>
         <div class="modal-footer">

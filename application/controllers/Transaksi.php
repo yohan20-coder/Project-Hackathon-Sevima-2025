@@ -8,7 +8,7 @@ class Transaksi extends CI_Controller
   {
       parent::__construct();
       //user akses
-     is_log_in();
+    //  is_log_in();
   }
 
     public function index()
@@ -35,9 +35,7 @@ class Transaksi extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
       //bagian validasi Input
-      $this->form_validation->set_rules('nama_pelanggan','Nama_pelanggan','required',[
-        'required' => 'Data Tidak Boleh Kosong !'
-      ]);
+     
       $this->form_validation->set_rules('nama_motor','Nama_motor','required',[
         'required' => 'Data Tidak Boleh Kosong !'
       ]);
@@ -61,7 +59,6 @@ class Transaksi extends CI_Controller
 
     }else{
         $data = [
-            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
             'nama_motor' => $this->input->post('nama_motor'),
             'kategori_merk' => $this->input->post('kategori_merk'),
             'tgl_beli' => $this->input->post('tgl_beli'),
@@ -82,9 +79,6 @@ class Transaksi extends CI_Controller
       $this->load->model('Transaksi_model');
       $data['edit'] = $this->Transaksi_model->Detail($id);
 
-      $this->form_validation->set_rules('nama_pelanggan','Nama_pelanggan','required',[
-        'required' => 'Data Tidak Boleh Kosong !'
-      ]);
       $this->form_validation->set_rules('nama_motor','Nama_motor','required',[
         'required' => 'Data Tidak Boleh Kosong !'
       ]);
@@ -108,7 +102,6 @@ class Transaksi extends CI_Controller
       }else{
 
         $data = [
-            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
             'nama_motor' => $this->input->post('nama_motor'),
             'kategori_merk' => $this->input->post('kategori_merk'),
             'tgl_beli' => $this->input->post('tgl_beli'),
@@ -143,18 +136,16 @@ class Transaksi extends CI_Controller
 
         // Set aktif sheet pertama dan isi header kolom
         $sheet = $excel->setActiveSheetIndex(0);
-        $sheet->setCellValue('A1', 'Nama Pelanggan');
-        $sheet->setCellValue('B1', 'Nama Motor');
-        $sheet->setCellValue('C1', 'Kategori Merk');
-        $sheet->setCellValue('D1', 'Tanggal Beli');
-        $sheet->setCellValue('E1', 'Total Bayar');
+        $sheet->setCellValue('A1', 'Nama Motor');
+        $sheet->setCellValue('B1', 'Kategori Merk');
+        $sheet->setCellValue('C1', 'Tanggal Beli');
+        $sheet->setCellValue('D1', 'Total Bayar');
 
         // Contoh baris data
-        $sheet->setCellValue('A2', 'Randi');
-        $sheet->setCellValue('B2', 'Revo Absolut');
-        $sheet->setCellValue('C2', 'Yamaha');
-        $sheet->setCellValue('D2', '03/04/2025');
-        $sheet->setCellValue('E2', '25000000');
+        $sheet->setCellValue('A2', 'Revo Absolut');
+        $sheet->setCellValue('B2', 'Yamaha');
+        $sheet->setCellValue('C2', '03/04/2025');
+        $sheet->setCellValue('D2', '25000000');
 
         // Nama file
         $filename = 'Template_Import_Transaksi.xlsx';
@@ -175,7 +166,7 @@ public function import()
     // Load PHPExcel
     require_once APPPATH . 'third_party/PHPExcel/PHPExcel.php';
 
-    $config['upload_path']   = './uploads/'; // RELATIVE path
+    $config['upload_path']   = './uploads/'; 
     $config['allowed_types'] = 'xls|xlsx|csv';
     $config['max_size']      = 2048;
 
@@ -199,11 +190,10 @@ public function import()
             if (empty($sheet[$i]['A']) || empty($sheet[$i]['B'])) continue;
 
             $data = [
-                'nama_pelanggan'     => $sheet[$i]['A'],
-                'nama_motor'    => $sheet[$i]['B'],
-                'kategori_merk'      => $sheet[$i]['C'],
-                'tgl_beli' => $sheet[$i]['D'],
-                'total_bayar'  => $sheet[$i]['E']
+                'nama_motor'    => $sheet[$i]['A'],
+                'kategori_merk'      => $sheet[$i]['B'],
+                'tgl_beli' => $sheet[$i]['C'],
+                'total_bayar'  => $sheet[$i]['D']
             ];
 
             
@@ -226,5 +216,27 @@ public function import()
 
     redirect('transaksi');
 }
+
+public function visual()
+    {
+       //mengambil data dari session di controller auth
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+      //memanggil model transaksi
+      $this->load->model('Transaksi_model','ts');
+      $data['status'] = $this->ts->grafik();
+
+      
+      
+    //  var_dump($data['tampil']);die;
+      $data['judul'] = 'Halaman Data Transaksi';
+      $this->load->view('template/header',$data);
+      $this->load->view('template/sidebar',$data);
+      $this->load->view('template/topbar',$data);
+      $this->load->view('transaksi/visual',$data);
+      $this->load->view('template/footer');
+    }
+
+    
 
 }

@@ -20,11 +20,7 @@
 
                         <input type="hidden" class="form-control" name="id" value="<?= $edit['id'] ?>">
 
-                        <div class="form-group">
-                            <label for="nama">Nama Pelanggan</label>
-                            <input type="text" class="form-control" name="nama_pelanggan" value="<?= $edit['nama_pelanggan'] ?>">
-                            <?= form_error('nama_pelanggan','<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
+                        
 
                         <div class="form-group">
                             <label for="nama">Nama Motor</label>

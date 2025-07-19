@@ -18,11 +18,6 @@
                     <div class="col-lg-12">
                         <form action="<?= base_url('transaksi/tambah') ?>" method="post">
 
-                        <div class="form-group">
-                            <label for="nama">Nama Pelanggan</label>
-                            <input type="text" class="form-control" name="nama_pelanggan">
-                            <?= form_error('nama_pelanggan','<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
 
                         <div class="form-group">
                             <label for="nama">Nama Motor</label>

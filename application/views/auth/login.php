@@ -13,8 +13,8 @@
               <div class="col-lg">
                 <div class="p-5">
                   <div class="text-center">
-                    <h4 class="h4 text-gray-900 mb-4">Aplikasi Transaksi Penjulan Motor</h4>
-                    <marquee><p>Soal Hackathon Sevima Nomor 6</p></marquee>
+                    <h4 class="h4 text-gray-900 mb-4">Sistem Hackathon Sevima Soal Nomor 6</h4>
+                  
                   </div>
 
                   <?= $this->session->flashdata('message');?>
