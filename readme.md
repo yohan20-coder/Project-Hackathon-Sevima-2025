@@ -1,11 +1,17 @@
 
-# Project CodeIgniter 3 — Nama Sistem Pencatatan Transaksi
+# Project CodeIgniter 3 Soal Nomor 5 dan 6 — Nama Sistem Pencatatan Transaksi Dan Polling
 
 Project ini dibuat menggunakan [CodeIgniter 3]
 
 ---
 
-## ✨ Fitur
+## ✨ Fitur Soal Nomor 6
+- Halaman Pemilihan
+- Autentikasi Login
+- Grafik Pemilihan
+
+- 
+## ✨ Fitur Soal Nomor 6
 - CRUD Data Transaksi
 - Autentikasi Login
 - Validasi Input Data
@@ -36,7 +42,6 @@ Taruh folder project pada htdocs jika menggunakan xampp sesuaikan url pada confi
 
 ### 3️⃣ Import database nya dan Atur Kofigurasi Database nya di file Database.php`
 ```bash
-cp env .env
 ```
 
 Edit bagian database :
@@ -51,6 +56,7 @@ Edit bagian database :
 ---
 
 ## 📌 Catatan
+- Untuk Login Dapat Masuk dengan Email : admin@gmail.com Password : 123
 - Jika menggunakan MySQL, ubah `DBDriver` menjadi `MySQLi`
 - Jika menggunakan PostgreSQL, ubah `DBDriver` menjadi `Postgre`
 
@@ -61,5 +67,4 @@ Edit bagian database :
 
 ---
 
-## 📝 Lisensi
-MIT License
+
