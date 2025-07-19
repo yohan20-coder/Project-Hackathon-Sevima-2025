@@ -5,7 +5,7 @@ Project ini dibuat menggunakan [CodeIgniter 3]
 
 ---
 
-## ✨ Fitur Soal Nomor 6
+## ✨ Fitur Soal Nomor 5
 - Halaman Pemilihan
 - Autentikasi Login
 - Grafik Pemilihan
