@@ -41,8 +41,6 @@ Taruh folder project pada htdocs jika menggunakan xampp sesuaikan url pada confi
 ```
 
 ### 3️⃣ Import database nya dan Atur Kofigurasi Database nya di file Database.php`
-```bash
-```
 
 Edit bagian database :
 ```
