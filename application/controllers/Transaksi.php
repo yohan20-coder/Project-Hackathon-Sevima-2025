@@ -8,7 +8,7 @@ class Transaksi extends CI_Controller
   {
       parent::__construct();
       //user akses
-    //  is_log_in();
+     is_log_in();
   }
 
     public function index()
