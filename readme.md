@@ -31,8 +31,7 @@ Project ini dibuat menggunakan [CodeIgniter 3]
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
+git clone https://github.com/yohan20-coder/Project-Hackathon-Sevima-2025.git
 ```
 
 ### 2️⃣ Install Sistem
