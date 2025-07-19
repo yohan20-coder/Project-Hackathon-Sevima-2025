@@ -10,7 +10,6 @@ Project ini dibuat menggunakan [CodeIgniter 3]
 - Autentikasi Login
 - Grafik Pemilihan
 
-- 
 ## ✨ Fitur Soal Nomor 6
 - CRUD Data Transaksi
 - Autentikasi Login
