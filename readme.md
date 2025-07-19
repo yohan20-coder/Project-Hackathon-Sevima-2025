@@ -63,7 +63,7 @@ Edit bagian database :
 ---
 
 ## 👨‍💻 Author
-- [Nama](https://github.com/yohan20-coder)
+- [Yohanes Ardianus Wee](https://github.com/yohan20-coder)
 
 ---
 
